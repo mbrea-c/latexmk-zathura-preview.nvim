@@ -1,6 +1,7 @@
 # latexmk-zathura-preview.nvim
 
 Opinionated LaTeX previewer plugin using zathura for Neovim.
+_SyncTeX_ forwards and backwards syncing are supported and enabled by default.
 Assumptions:
 
 - `latexmk` is used for building the project, and a `latexmkrc` file is
@@ -35,9 +36,7 @@ Assumptions:
 - The target output file is called `main.pdf`. This will be configurable
   soon, when I have time to get around to it :).
 - The `zathura` PDF viewer is installed in your system.
-
-Currently, _synctex_ forwards syncing is supported by default.
-Backwards syncing is work in progress.
+- `nvr` is installed in your system.
 
 ## Installation and configuration
 
@@ -66,3 +65,13 @@ return {
   end,
 }
 ```
+
+## Usage
+
+If configured as in the installation example, pressing `<localleader>ll` will
+build the project and open a preview of the output in a zathura instance, with
+the line corresponding to the where the Neovim cursor is placed highlighted. If a
+zathura instance already exists, the line will be highlighted in that instance.
+
+In the zathura instance opened thus, you can press CTRL+Left click to navigate
+to the corresponding latex source for the text you clicked in your Neovim buffer.
