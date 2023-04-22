@@ -7,9 +7,7 @@ local _config = {
   },
 }
 
-local nvim_remote_command_arg = ' -x "nvr --servername '
-    .. vim.v.servername
-    .. ' --remote-silent +call %{line} %{input}"'
+local nvim_remote_command_arg = ' -x "nvr --servername ' .. vim.v.servername .. ' --remote-silent +%{line} %{input}"'
 
 function M.build_and_preview()
   M.build()
